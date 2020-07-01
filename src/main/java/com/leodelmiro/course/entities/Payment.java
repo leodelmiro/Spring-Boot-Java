@@ -1,5 +1,7 @@
 package com.leodelmiro.course.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.Instant;
@@ -16,6 +18,7 @@ public class Payment implements Serializable {
 
     private Instant moment;
 
+    @JsonIgnore
     @OneToOne
     @MapsId
     private Order order;
